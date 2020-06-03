@@ -1,0 +1,36 @@
+{
+  "entries" : [ {
+    "url" : "s3://travelappeal-kinesis-firehose-eu/urls-prod2020/04/01/22/urls-prod-58-2020-04-01-22-40-27-2e249178-eac8-40b9-8e6d-30e0b00cc597",
+    "mandatory" : true
+  }, {
+    "url" : "s3://travelappeal-kinesis-firehose-eu/urls-prod2020/04/01/22/urls-prod-58-2020-04-01-22-45-28-3e24be08-6ca8-49a7-901b-be8f6a71ae21",
+    "mandatory" : true
+  }, {
+    "url" : "s3://travelappeal-kinesis-firehose-eu/urls-prod2020/04/01/22/urls-prod-58-2020-04-01-22-50-28-ad6d94d7-b17b-4f32-957a-196777d1a649",
+    "mandatory" : true
+  }, {
+    "url" : "s3://travelappeal-kinesis-firehose-eu/urls-prod2020/04/01/22/urls-prod-58-2020-04-01-22-55-32-b525985c-3e78-4cc2-b198-9674c58ce2d2",
+    "mandatory" : true
+  }, {
+    "url" : "s3://travelappeal-kinesis-firehose-eu/urls-prod2020/04/01/23/urls-prod-58-2020-04-01-23-00-34-48f937a4-559e-433b-815e-3db9a6d0ebca",
+    "mandatory" : true
+  }, {
+    "url" : "s3://travelappeal-kinesis-firehose-eu/urls-prod2020/04/01/23/urls-prod-58-2020-04-01-23-05-35-aca00588-71da-4da4-8ddb-fb4a20906077",
+    "mandatory" : true
+  }, {
+    "url" : "s3://travelappeal-kinesis-firehose-eu/urls-prod2020/04/01/23/urls-prod-58-2020-04-01-23-10-38-7e7bd836-61b9-4ec4-bc85-cb5a2f70b6e6",
+    "mandatory" : true
+  }, {
+    "url" : "s3://travelappeal-kinesis-firehose-eu/urls-prod2020/04/01/23/urls-prod-58-2020-04-01-23-15-39-fe07fc53-a1e3-4299-9cda-2970316b3810",
+    "mandatory" : true
+  }, {
+    "url" : "s3://travelappeal-kinesis-firehose-eu/urls-prod2020/04/01/23/urls-prod-58-2020-04-01-23-20-41-e809c8d6-c3f9-48db-bc3f-bb5950bd69fe",
+    "mandatory" : true
+  }, {
+    "url" : "s3://travelappeal-kinesis-firehose-eu/urls-prod2020/04/01/23/urls-prod-58-2020-04-01-23-25-42-6159bb9b-3f2a-4597-afd7-b0206a0c982c",
+    "mandatory" : true
+  }, {
+    "url" : "s3://travelappeal-kinesis-firehose-eu/urls-prod2020/04/01/23/urls-prod-58-2020-04-01-23-30-42-538c17d2-5b9c-49c9-8d52-e20addb78a81",
+    "mandatory" : true
+  } ]
+}

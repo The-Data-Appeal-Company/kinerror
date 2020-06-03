@@ -1,0 +1,6 @@
+{
+  "entries" : [ {
+    "url" : "s3://travelappeal-kinesis-firehose-eu/urls-prod2020/04/01/22/urls-prod-58-2020-03-15-05-00-58-23ac1aa7-c186-4f35-8966-9513c2dbc449.json",
+    "mandatory" : true
+  }]
+}
