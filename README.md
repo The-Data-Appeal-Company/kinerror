@@ -1,5 +1,5 @@
 # Kinerror
-###Simple and concurrently cli to process AWS Kinesis firehose errors
+### Simple and concurrently cli to process AWS Kinesis firehose errors
 Kinerror is a simple command line tool usable to process errors about kinesis firehose. If you have some errors on your stream and the delivery retry time is over, you need to reimport your data manually. 
 We don't want you to do this!
 ### Usage
