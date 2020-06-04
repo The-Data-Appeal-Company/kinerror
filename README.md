@@ -34,10 +34,3 @@ kinerror -c 10 -b <bucketErrName> -d <deliveryStreamName> -r <deliveryStreamRegi
 ```bash
 kinerror -b <bucketErrName> -p 2020/05 -d <deliveryStreamName> -r <deliveryStreamRegion>
 ```
-
-
-### Run with docker
-```bash
-docker run -it \
- thedataappealcompany/kinerror <command>
-```
