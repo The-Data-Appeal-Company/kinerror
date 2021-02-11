@@ -3,6 +3,7 @@ package io.datappeal.kinerror.importer;
 import com.amazonaws.services.kinesisfirehose.AmazonKinesisFirehose;
 import com.amazonaws.services.kinesisfirehose.model.PutRecordBatchRequest;
 import com.amazonaws.services.kinesisfirehose.model.Record;
+import com.google.common.util.concurrent.Futures;
 import io.datappeal.kinerror.model.Entry;
 import io.datappeal.kinerror.model.Error;
 import io.datappeal.kinerror.s3.S3Provider;
@@ -12,10 +13,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -50,20 +48,22 @@ public class Importer {
     public void process(final String bucketErr, final String prefix) throws ExecutionException, InterruptedException {
 
         final List<String> errorsKeys = this.s3Provider.listErrorsKeys(bucketErr, prefix);
-        final List<Future<?>> executables = new ArrayList<>(errorsKeys.size());
+        final List<CompletableFuture<?>> executables = new ArrayList<>(errorsKeys.size());
 
         for (String errorKey : errorsKeys) {
-            executables.add(executor.submit(() -> {
+            executables.add(CompletableFuture.supplyAsync(() -> {
                 try {
                     executeErrorsRecoveryForKey(bucketErr, errorKey);
                 } catch (IOException e) {
                     throw new IllegalArgumentException(e);
                 }
+                return null;
             }));
         }
 
-        for (Future<?> future : executables)
-            future.get();
+        CompletableFuture.allOf(executables.toArray(new CompletableFuture[0])).join();
+
+
     }
 
     private void executeErrorsRecoveryForKey(String bucketErr, String errorKey) throws IOException {
@@ -80,7 +80,7 @@ public class Importer {
                 final String bucket = matcher.group(1);
                 final String key = matcher.group(2);
 
-                System.out.println(String.format("Processing %s/%s", bucket, key));
+                System.out.printf("Processing %s/%s%n", bucket, key);
                 processError(bucket, key);
 
             }
